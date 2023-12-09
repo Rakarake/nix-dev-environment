@@ -112,6 +112,10 @@ in
       # Agda
       (agda.withPackages [ agdaPackages.standard-library ])
 
+      # Typst
+      typst
+      typst-lsp
+
       # Vscode
       vscode
     ]);

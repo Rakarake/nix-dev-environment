@@ -14,9 +14,9 @@ alias e='nvim'
 alias open='xdg-open'
 alias :q='exit'
 alias ..='cd ..'
-alias cp='cp -iv'
+alias cp='cp -v'
 alias mv='mv -v'
-alias rm='rm -iv'
+alias rm='rm -v'
 alias ncmpcpp='echo "trying mpd: " ; mpd ; ncmpcpp'
 alias bat='bat --theme=base16'
 alias die='sudo shutdown now'
@@ -58,11 +58,12 @@ alias ip-list='nmap -sP 192.168.1.1/24'
 # Haskell
 alias cabi='cabal repl'
 
-# Fast
+# Nix Fast
 alias nc="cd ~/Projects/nixos-config"
 alias nde="cd ~/Projects/nix-dev-environment"
 alias rebuild="sudo nixos-rebuild switch --flake ."
 alias rebuild-boot="sudo nixos-rebuild boot --flake ."
+alias direnv-init='echo "use flake" > .envrc'
 
 # Kitty ssh
 if [ "$TERM" = "xterm-kitty" ]

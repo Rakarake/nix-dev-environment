@@ -264,6 +264,12 @@ require'lspconfig'.gopls.setup{
      flags = lsp_flags,
 }
 
+require'lspconfig'.wgsl_analyzer.setup{
+     capabilities = capabilities,
+     on_attach = on_attach,
+     flags = lsp_flags,
+}
+
 -- Typst
 require'lspconfig'.typst_lsp.setup{
      capabilities = capabilities,

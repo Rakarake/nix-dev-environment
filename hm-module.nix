@@ -1,9 +1,9 @@
-self: {
+wgsl_analyzer: {
   config,
   lib,
   pkgs,
   ...
-}@attrs:
+}:
 let
   cfg = config.dev-stuff;
 in
@@ -122,7 +122,7 @@ in
       typst-lsp
 
       # WGSL
-      attrs.wgsl_analyzer.packages.${system}.default
+      wgsl_analyzer.packages.${system}.default
 
       # Vscode
       vscode

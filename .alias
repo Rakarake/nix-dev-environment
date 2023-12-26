@@ -4,16 +4,7 @@
 export EDITOR=nvim
 export VISUAL=nvim
 export HISTCONTROL=ignoreboth
-export BROWSER=firefox
 export COLORTERM=truecolor
-
-# Required if using ghcup
-[ -f "/home/rakarake/.ghcup/env" ] && source "/home/rakarake/.ghcup/env" # ghcup-env
-
-PATH=~/.scripts:$PATH                        # Scripts
-PATH=~/.local/bin:$PATH                      # Stack puts executables here
-PATH=/home/rakarake/.cargo/bin:$PATH         # Cargo executables
-PATH=/home/rakarake/Documents/dotnet5:$PATH  # Dotnet
 
 # Manpager
 export MANPAGER='nvim +Man!'
@@ -23,10 +14,9 @@ alias e='nvim'
 alias open='xdg-open'
 alias :q='exit'
 alias ..='cd ..'
-alias cp='cp -iv'
+alias cp='cp -v'
 alias mv='mv -v'
-alias rm='rm'
-alias mkd='mkdir -pv'
+alias rm='rm -v'
 alias ncmpcpp='echo "trying mpd: " ; mpd ; ncmpcpp'
 alias bat='bat --theme=base16'
 alias die='sudo shutdown now'
@@ -57,6 +47,7 @@ alias pull='git pull origin'
 alias push='git push origin'
 alias stash='git stash'
 alias clone='git clone'
+alias log='git log'
 
 # Vimwiki
 alias vimwiki='nvim ~/vimwiki/index.md'
@@ -67,10 +58,12 @@ alias ip-list='nmap -sP 192.168.1.1/24'
 # Haskell
 alias cabi='cabal repl'
 
-# Fast
+# Nix Fast
 alias nc="cd ~/Projects/nixos-config"
-alias rebuild="sudo nixos-rebuild switch --flake ~/Projects/nixos-config/"
-alias vimrc="$EDITOR ~/Projects/nixos-config/nvim/init.lua"
+alias nde="cd ~/Projects/nix-dev-environment"
+alias rebuild="sudo nixos-rebuild switch --flake ."
+alias rebuild-boot="sudo nixos-rebuild boot --flake ."
+alias direnv-init='echo "use flake" > .envrc'
 
 # Kitty ssh
 if [ "$TERM" = "xterm-kitty" ]

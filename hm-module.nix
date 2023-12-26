@@ -1,4 +1,4 @@
-self: {
+wgsl_analyzer: {
   config,
   lib,
   pkgs,
@@ -116,6 +116,13 @@ in
 
       # Agda
       (agda.withPackages [ agdaPackages.standard-library ])
+
+      # Typst
+      typst
+      typst-lsp
+
+      # WGSL
+      wgsl_analyzer.packages.${system}.default
 
       # Vscode
       vscode

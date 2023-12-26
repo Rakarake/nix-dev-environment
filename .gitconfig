@@ -8,6 +8,4 @@
 	excludesfile = /home/rakarake/.gitignore
 [color]
 	ui = auto
-[commit]
-    gpgsign = true
 

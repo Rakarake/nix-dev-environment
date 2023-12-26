@@ -1,6 +1,10 @@
 -- Neovim configuration
 vim.g.mapleader = ' '
 
+-- Load filetype specific configurations
+vim.cmd('filetype plugin on')
+vim.cmd('filetype indent plugin on')
+
 -- Theme / Colorscheme
 vim.cmd.colorscheme("catppuccin-macchiato")
 
@@ -19,7 +23,6 @@ vim.filetype.add({extension = {wgsl = "wgsl"}})
 vim.keymap.set('n', '<leader>rr', '<cmd>belowright split term://bash ./run.sh<cr>')
 
 -- Vimwiki
-vim.cmd('filetype plugin on')
 vim.g.vimwiki_list = {{path = '~/vimwiki/', syntax = 'markdown', ext = '.md'}}
 
 -- Telescope
@@ -256,6 +259,12 @@ require'lspconfig'.nil_ls.setup{
 
 -- Go
 require'lspconfig'.gopls.setup{
+     capabilities = capabilities,
+     on_attach = on_attach,
+     flags = lsp_flags,
+}
+
+require'lspconfig'.wgsl_analyzer.setup{
      capabilities = capabilities,
      on_attach = on_attach,
      flags = lsp_flags,

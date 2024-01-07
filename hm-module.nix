@@ -36,13 +36,30 @@ in
       GOPATH = ".cache/gostuff";
     };
 
-    # Git config
-    home.file.".gitconfig".source = ./.gitconfig;
     # Kitty config
     home.file.".config/kitty/kitty.conf".source = ./kitty/kitty.conf;
     home.file.".config/kitty/Catppuccin-Macchiato.conf".source = ./kitty/Catppuccin-Macchiato.conf;
     # Ghci prompt
     home.file.".ghci".source = ./.ghci;
+
+    # Git config
+    programs.git = {
+      enable = true;
+      lfs.enable = true;
+      userName  = "Rakarake";
+      userEmail = "rak@rakarake.xyz";
+      extraConfig = {
+        core = {
+          editor = "nvim";
+        };
+        color = {
+          ui = "auto";
+        };
+        user = {
+          signingKey = "98CF6C24F40B3531!";
+        };
+      };
+    };
 
     # Neovim config
     programs.neovim = {

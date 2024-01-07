@@ -31,10 +31,10 @@ in
     # ZSH config
     home.file.".zshrc".source = ./.zshrc;
 
-    home.sessionVariables = {
-      # haha get rekt
-      GOPATH = ".cache/gostuff";
-    };
+    #home.sessionVariables = {
+    #  # haha get rekt
+    #  GOPATH = ".cache/gostuff";
+    #};
 
     # Kitty config
     home.file.".config/kitty/kitty.conf".source = ./kitty/kitty.conf;

@@ -59,10 +59,11 @@ alias ip-list='nmap -sP 192.168.1.1/24'
 alias cabi='cabal repl'
 
 # Nix Fast
-alias nc="cd ~/Projects/nixos-config"
-alias nde="cd ~/Projects/nix-dev-environment"
-alias rebuild="sudo nixos-rebuild switch --flake ."
-alias rebuild-boot="sudo nixos-rebuild boot --flake ."
+alias n='cd ~/Projects/nixos-config'
+alias nde='cd ~/Projects/nix-dev-environment'
+alias flake='nix flake'
+alias rebuild='sudo nixos-rebuild switch --flake .'
+alias rebuild-boot='sudo nixos-rebuild boot --flake .'
 alias direnv-init='echo "use flake" > .envrc'
 
 # Kitty ssh

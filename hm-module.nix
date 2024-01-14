@@ -31,11 +31,6 @@ in
     # ZSH config
     home.file.".zshrc".source = ./.zshrc;
 
-    #home.sessionVariables = {
-    #  # haha get rekt
-    #  GOPATH = ".cache/gostuff";
-    #};
-
     # Kitty config
     home.file.".config/kitty/kitty.conf".source = ./kitty/kitty.conf;
     home.file.".config/kitty/Catppuccin-Macchiato.conf".source = ./kitty/Catppuccin-Macchiato.conf;
@@ -91,18 +86,15 @@ in
 
     # Programming packages
     home.packages = (with pkgs; [
+      vscode
+
       # HTML / CSS / JSON / ESLint language server
       vscode-langservers-extracted
 
       # C / C++
-      clang
-      #gcc
-      pkg-config
       ccls          # A C/C++ language server
-      mpi           # C message passing
 
       # Haskell
-      ghc
       haskell-language-server
 
       # Nix??? 😲
@@ -112,37 +104,23 @@ in
       godot_4
 
       # Rust
-      rustc
       cargo
-      rustfmt
       rust-analyzer # Rust language server
 
-      # Python
-      python3
-
-      # Java
-      jdk17
-
       # Lua
-      lua
       lua-language-server
 
       # Go
-      go
       gopls
 
-      # Agda
-      (agda.withPackages [ agdaPackages.standard-library ])
-
       # Typst
-      typst
       typst-lsp
 
       # WGSL
       wgsl_analyzer.packages.${system}.default
 
-      # Vscode
-      vscode
+      # C#
+      csharp-ls
     ]);
 
     # Godot single single window

@@ -118,9 +118,6 @@ in
 
       # WGSL
       wgsl_analyzer.packages.${system}.default
-
-      # C#
-      csharp-ls
     ]);
 
     # Godot single single window

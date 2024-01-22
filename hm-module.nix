@@ -86,7 +86,7 @@ in
 
     # Programming packages
     home.packages = (with pkgs; [
-      vscode
+      vscode-fhs
 
       # HTML / CSS / JSON / ESLint language server
       vscode-langservers-extracted

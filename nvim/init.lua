@@ -277,6 +277,14 @@ require'lspconfig'.typst_lsp.setup{
      flags = lsp_flags,
 }
 
+-- C#
+require'lspconfig'.csharp_ls.setup{
+     capabilities = capabilities,
+     on_attach = on_attach,
+     flags = lsp_flags,
+}
+
+
 -- Lua, primarily for neovim
 require'lspconfig'.lua_ls.setup {
   on_init = function(client)

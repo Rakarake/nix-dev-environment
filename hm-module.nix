@@ -8,9 +8,6 @@ let
   cfg = config.dev-stuff;
 in
 {
-  imports = [
-    ./bash.nix
-  ];
   # Option to enable dev-stuff
   options.dev-stuff = {
     # Option to enable Hyprland config

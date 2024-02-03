@@ -282,6 +282,8 @@ require'lspconfig'.csharp_ls.setup{
      capabilities = capabilities,
      on_attach = on_attach,
      flags = lsp_flags,
+     -- Use local project installation of csharp-ls
+     cmd = "dotnet csharp-ls",
 }
 
 

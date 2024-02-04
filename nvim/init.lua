@@ -277,16 +277,6 @@ require'lspconfig'.typst_lsp.setup{
      flags = lsp_flags,
 }
 
--- C#
-require'lspconfig'.csharp_ls.setup{
-     capabilities = capabilities,
-     on_attach = on_attach,
-     flags = lsp_flags,
-     -- Use local project installation of csharp-ls
-     cmd = {"dotnet csharp-ls"},
-}
-
-
 -- Lua, primarily for neovim
 require'lspconfig'.lua_ls.setup {
   on_init = function(client)
@@ -330,3 +320,7 @@ require("catppuccin").setup({
         --mini = false,
     }
 })
+
+-- C# LSP support
+vim.g.OmniSharp_server_use_net6 = 1
+

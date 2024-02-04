@@ -28,6 +28,7 @@ in
         toggleterm-nvim
         vimwiki
         typst-vim
+        omnisharp-extended-lsp-nvim
         # LSP
         nvim-lspconfig
         nvim-cmp

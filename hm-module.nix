@@ -41,6 +41,7 @@ in
     # Neovim filetype specific configs
     home.file.".config/nvim/ftplugin/gdscript.lua".source = ./nvim/ftplugin/gdscript.lua;
     home.file.".config/nvim/ftplugin/html.lua".source = ./nvim/ftplugin/html.lua;
+    home.file.".config/nvim/snippets/cs.lua".source = ./nvim/snippets/cs.lua;
 
     # Neovim main configuration
     home.file.".config/nvim/init.lua".text = ''
@@ -183,6 +184,8 @@ local lsp_flags = {
 
 -- luasnip setup
 local luasnip = require 'luasnip'
+
+require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/snippets" })
 
 -- nvim-cmp configuration
 -- Add additional capabilities supported by nvim-cmp

@@ -36,6 +36,43 @@ in
       ];
     };
 
+    # LSP packages
+    home.packages = with pkgs; [
+      # HTML / CSS / JSON / ESLint language server
+      vscode-langservers-extracted
+
+      # C / C++
+      ccls          # A C/C++ language server
+
+      # Haskell
+      haskell-language-server
+
+      # Nix??? 😲
+      nil  # Nix language server
+
+      # Rust
+      rustfmt
+      rust-analyzer # Rust language server
+
+      # Lua
+      lua-language-server
+
+      # Go
+      gopls
+
+      # Agda
+      (agda.withPackages [ agdaPackages.standard-library ])
+
+      # Typst
+      typst-lsp
+
+      # WGSL
+      inputs.wgsl_analyzer.packages.${system}.default
+
+      # C#
+      omnisharp-roslyn
+    ];
+
     # Make sure undodir exists
     home.file.".config/nvim/undodir/gamnangstyle".text = "whop\n";
     # Neovim filetype specific configs
@@ -322,6 +359,13 @@ require'lspconfig'.wgsl_analyzer.setup{
 
 -- Typst
 require'lspconfig'.typst_lsp.setup{
+     capabilities = capabilities,
+     on_attach = on_attach,
+     flags = lsp_flags,
+}
+
+-- Erlang
+require'lspconfig'.erlangls.setup{
      capabilities = capabilities,
      on_attach = on_attach,
      flags = lsp_flags,

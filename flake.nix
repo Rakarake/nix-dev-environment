@@ -11,7 +11,7 @@
 
   };
   outputs = { wgsl_analyzer, ... }: {
-    homeManagerModules.default = wgsl_analyzer (import ./hm-module.nix);
+    homeManagerModules.default = (import ./hm-module.nix) wgsl_analyzer;
   };
 }
 

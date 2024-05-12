@@ -11,7 +11,7 @@
 
   };
   outputs = { wgsl_analyzer, ... }: {
-    homeManagerModules.default = (import ./hm-module.nix) wgsl_analyzer;
+    homeManagerModules.default = (import ./hm-module.nix) { inherit wgsl_analyzer; };
   };
 }
 

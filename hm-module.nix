@@ -1,3 +1,4 @@
+{ wgsl_analyzer }:
 {
   config,
   lib,

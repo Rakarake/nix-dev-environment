@@ -6,7 +6,7 @@
     # Wgsl language server
     wgsl_analyzer = {
       url = "github:wgsl-analyzer/wgsl-analyzer";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };

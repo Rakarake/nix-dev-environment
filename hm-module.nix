@@ -1,4 +1,4 @@
-{ wgsl_analyzer }:
+{ wgsl_analyzer, ... }:
 {
   config,
   lib,
@@ -68,7 +68,7 @@ in
       typst-lsp
 
       # WGSL
-      inputs.wgsl_analyzer.packages.${system}.default
+      wgsl_analyzer.packages.${system}.default
 
       # C#
       omnisharp-roslyn

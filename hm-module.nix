@@ -72,6 +72,9 @@ in
 
       # C#
       omnisharp-roslyn
+
+      # Erlang
+      erlang-ls
     ];
 
     # Make sure undodir exists

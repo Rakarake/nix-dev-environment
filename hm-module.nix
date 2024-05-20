@@ -15,6 +15,13 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    # Make sure undodir exists
+    home.file.".config/nvim/undodir/gamnangstyle".text = "whop\n";
+    # Neovim filetype specific configs
+    home.file.".config/nvim/ftplugin/gdscript.lua".source = ./nvim/ftplugin/gdscript.lua;
+    home.file.".config/nvim/ftplugin/html.lua".source = ./nvim/ftplugin/html.lua;
+    home.file.".config/nvim/snippets/cs.lua".source = ./nvim/snippets/cs.lua;
+
     # Neovim config
     programs.neovim = {
       enable = true;
@@ -34,17 +41,7 @@ in
         cmp-nvim-lsp
         luasnip
       ];
-    };
-
-    # Make sure undodir exists
-    home.file.".config/nvim/undodir/gamnangstyle".text = "whop\n";
-    # Neovim filetype specific configs
-    home.file.".config/nvim/ftplugin/gdscript.lua".source = ./nvim/ftplugin/gdscript.lua;
-    home.file.".config/nvim/ftplugin/html.lua".source = ./nvim/ftplugin/html.lua;
-    home.file.".config/nvim/snippets/cs.lua".source = ./nvim/snippets/cs.lua;
-
-    # Neovim main configuration
-    home.file.".config/nvim/init.lua".text = ''
+      extraLuaConfig = ''
 -- Neovim configuration
 vim.g.mapleader = ' '
 
@@ -381,6 +378,7 @@ require("catppuccin").setup({
         --mini = false,
     }
 })
-    '';
+      '';
+    };
   };
 }

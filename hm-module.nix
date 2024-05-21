@@ -72,7 +72,7 @@ in
         nvim-treesitter.withAllGrammars
         plenary-nvim
         telescope-nvim
-        catppuccin-nvim  # Theme
+        #catppuccin-nvim  # Theme
         toggleterm-nvim
         vimwiki
         typst-vim
@@ -91,7 +91,7 @@ vim.cmd('filetype plugin on')
 vim.cmd('filetype indent plugin on')
 
 -- Theme / Colorscheme
-vim.cmd.colorscheme("catppuccin-macchiato")
+--vim.cmd.colorscheme("catppuccin-macchiato")
 
 -- Treesitter setup
 require'nvim-treesitter.configs'.setup {
@@ -416,16 +416,16 @@ require'lspconfig'.omnisharp.setup {
 }
 
 -- Catppuccin theme integrations
-require("catppuccin").setup({
-    integrations = {
-        --cmp = true,
-        --gitsigns = true,
-        --nvimtree = true,
-        telescope = true,
-        --notify = false,
-        --mini = false,
-    }
-})
+--require("catppuccin").setup({
+--    integrations = {
+--        --cmp = true,
+--        --gitsigns = true,
+--        --nvimtree = true,
+--        telescope = true,
+--        --notify = false,
+--        --mini = false,
+--    }
+--})
       '';
     };
   };
